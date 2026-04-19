@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Order Book MVP</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 1rem; background: #0f172a; color: #e2e8f0; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .card { background: #111827; border-radius: 12px; padding: 1rem; }
+      canvas { background: #0b1220; border-radius: 8px; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+  </head>
+  <body>
+    <h1>MetaScalp Order Book Analytics MVP</h1>
+    <div class="grid">
+      <div class="card">
+        <h3>Bid/Ask Depth (±10% mid)</h3>
+        <canvas id="depthChart"></canvas>
+      </div>
+      <div class="card">
+        <h3>Heatmap-like Level Intensity</h3>
+        <canvas id="heatChart"></canvas>
+      </div>
+    </div>
+    <div class="card" style="margin-top: 1rem;">
+      <h3>Signals Replay</h3>
+      <label>Symbol: <input id="symbol" value="BTCUSDT"/></label>
+      <button id="load">Load Last 60m</button>
+      <pre id="signals" class="mono"></pre>
+    </div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
